@@ -16,6 +16,10 @@ const authReducer = (state = initialState, action) => {
       return state;
     case 'LOAD_USER':
       return {...payload};
+    case 'SIGNUP_SUCCESS':
+      return {...payload}
+    case 'SINGUP_FAILED':
+      return state;
     default:
       return state;
   }
