@@ -37,3 +37,32 @@ export const addCategory = (name, description) => async (dispatch) => {
     });
   }
 };
+
+export const getCategories = () => async (dispatch) => {
+  try {
+    const res = await axios.get("http://localhost:8080/category/all");
+    const { data, message, success } = res.data;
+    console.log(data);
+
+    if (success) {
+      dispatch({
+        type: "FETCH_CATEGORIES_SUCCESS",
+        payload: data,
+      });
+      toast.success(message);
+    } else {
+      dispatch({
+        type: "FETCH_CATEGORIES_FAILED",
+        payload: {},
+      });
+      toast.error(message);
+    }
+  } catch (error) {
+    console.log(error);
+    toast.error(error.message);
+    dispatch({
+      type: "FETCH_CATEGORIES_FAILED",
+      payload: {},
+    });
+  }
+};

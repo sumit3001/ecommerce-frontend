@@ -3,16 +3,16 @@ import "../styles/Loader.css";
 const Loader = () => {
   return (
     <div className="loader-container">
-      <div class="loader">
-        <span class="loader-block"></span>
-        <span class="loader-block"></span>
-        <span class="loader-block"></span>
-        <span class="loader-block"></span>
-        <span class="loader-block"></span>
-        <span class="loader-block"></span>
-        <span class="loader-block"></span>
-        <span class="loader-block"></span>
-        <span class="loader-block"></span>
+      <div className="loader">
+        <span className="loader-block"></span>
+        <span className="loader-block"></span>
+        <span className="loader-block"></span>
+        <span className="loader-block"></span>
+        <span className="loader-block"></span>
+        <span className="loader-block"></span>
+        <span className="loader-block"></span>
+        <span className="loader-block"></span>
+        <span className="loader-block"></span>
       </div>
     </div>
   );
