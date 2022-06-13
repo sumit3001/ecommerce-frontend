@@ -36,12 +36,12 @@ export const LoginUser = (email, password) => async (dispatch) => {
 export const LoadUser = () => async (dispatch) => {
   const token = localStorage.getItem("token");
   const base64 = token.split(".")[1];
-  const { email, id } = JSON.parse(atob(base64));
+  const { email, id, role } = JSON.parse(atob(base64));
 
   if (token) {
     dispatch({
       type: "LOAD_USER",
-      payload: { token, user: { email, id } },
+      payload: { token, user: { email, id, role } },
     });
   } else {
     dispatch({
@@ -61,7 +61,7 @@ export const SignupUser =
         password,
       });
       const { data, success, message } = res.data;
-      if (success) { 
+      if (success) {
         dispatch({
           type: "SIGNUP_SUCCESS",
           payload: data,
@@ -83,3 +83,12 @@ export const SignupUser =
       });
     }
   };
+
+export const logout = () => (dispatch) => {
+  localStorage.removeItem("token");
+
+  dispatch({
+    type: "LOGOUT",
+  });
+  toast.success("User logged out");
+};
