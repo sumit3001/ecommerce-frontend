@@ -91,4 +91,5 @@ export const logout = () => (dispatch) => {
     type: "LOGOUT",
   });
   toast.success("User logged out");
+  window.location.reload();
 };

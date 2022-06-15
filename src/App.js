@@ -8,6 +8,7 @@ import { LoadUser, logout } from "./redux/actions/auth";
 import Signup from "./components/auth/Signup";
 import Admin from "./components/admin/Admin";
 import AdminWrapper from "./components/HOC/AdminWrapper";
+import Navbar from "./layout/Navbar";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -18,12 +19,13 @@ const App = () => {
   return (
     <div>
       <Toaster />
-      <button onClick={e=>{
+      {/* <button onClick={e=>{
         dispatch(logout());
         window.location.reload();
       }}>
         Logout
-      </button>
+      </button> */}
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
