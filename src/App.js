@@ -9,11 +9,14 @@ import Signup from "./components/auth/Signup";
 import Admin from "./components/admin/Admin";
 import AdminWrapper from "./components/HOC/AdminWrapper";
 import Navbar from "./layout/Navbar";
+import { getProduct } from "./redux/actions/product";
+import Products from "./components/product/Products";
 
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(LoadUser());
+    dispatch(getProduct())
   }, []);
 
   return (
@@ -29,6 +32,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/shop" element={<Products />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/admin" element={<AdminWrapper><Admin/></AdminWrapper>} />
       </Routes>
