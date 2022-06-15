@@ -42,7 +42,6 @@ export const getCategories = () => async (dispatch) => {
   try {
     const res = await axios.get("http://localhost:8080/category/all");
     const { data, message, success } = res.data;
-    console.log(data);
 
     if (success) {
       dispatch({
