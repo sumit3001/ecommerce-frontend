@@ -39,3 +39,31 @@ export const addProduct = (product) => async (dispatch) => {
     });
   }
 };
+
+export const getProduct = () => async (dispatch) => {
+  try {
+    const res = await axios.get("http://localhost:8080/product/all");
+    const { data, message, success } = res.data;
+    console.log(data)
+    if (success) {
+      dispatch({
+        type: "FETCH_PRODUCTS_SUCCESS",
+        payload: data,
+      });
+      toast.success(message);
+    } else {
+      dispatch({
+        type: "FETCH_PRODUCTS_FAILED",
+        payload: {},
+      });
+      toast.error(message);
+    }
+  } catch (error) {
+    console.log(error);
+    toast.error(error.message);
+    dispatch({
+      type: "FETCH_PRODUCTS_FAILED",
+      payload: {},
+    });
+  }
+};
