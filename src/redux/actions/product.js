@@ -5,7 +5,7 @@ export const addProduct = (product) => async (dispatch) => {
   try {
     const token = localStorage.getItem("token");
     const res = await axios.post(
-      "http://localhost:8080/product/add",
+      "https://stark-gorge-91969.herokuapp.com/product/add",
       {
         ...product,
       },
@@ -42,7 +42,7 @@ export const addProduct = (product) => async (dispatch) => {
 
 export const getProduct = () => async (dispatch) => {
   try {
-    const res = await axios.get("http://localhost:8080/product/all");
+    const res = await axios.get("https://stark-gorge-91969.herokuapp.com/product/all");
     const { data, message, success } = res.data;
     if (success) {
       dispatch({
