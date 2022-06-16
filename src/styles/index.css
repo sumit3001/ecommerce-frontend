@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+div.cart-preview {
+  position: relative;
+}
+
+div.cart-preview div#quantity {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  background-color: dodgerblue;
+  color: #f1f1f1;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  padding-bottom: 3px;
+  font-size: 15px;
+}

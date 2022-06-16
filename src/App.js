@@ -13,12 +13,15 @@ import { getProduct } from "./redux/actions/product";
 import Products from "./components/product/Products";
 import Footer from "./layout/Footer";
 import Product from "./components/product/Product";
+import { loadCart } from "./redux/actions/cart";
+import Cart from "./components/cart/Cart";
 
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(LoadUser());
-    dispatch(getProduct())
+    dispatch(getProduct());
+    dispatch(loadCart());
   }, []);
 
   return (
@@ -37,6 +40,7 @@ const App = () => {
         <Route path="/shop" element={<Products />} />
         <Route path="/shop/:id" element={<Product />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/admin" element={<AdminWrapper><Admin/></AdminWrapper>} />
       </Routes>
       <Footer/>

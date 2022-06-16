@@ -23,7 +23,7 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import Values from '../Values';
 import { useDispatch } from 'react-redux';
-// import { addToCart } from '../../actions/cart';
+import { addToCart } from '../../redux/actions/cart';
 
 
 const Feature = ({ text, icon, iconBg }) => {
@@ -45,6 +45,7 @@ const Feature = ({ text, icon, iconBg }) => {
 
 export default function Product() {
   const [selectedProduct, setSelectedproduct] = useState(null)
+  const dispatch = useDispatch();
   const { products } = useSelector(state => state.product)
   const { id } = useParams()
   const fetchProduct = (productId) => {
@@ -116,7 +117,7 @@ export default function Product() {
                   <Flex justifyContent={'space-between'} spacing={10} pt={2}>
                       <Button
                           onClick={() => {
-                              // addCart(selectedProduct)
+                              dispatch(addToCart(selectedProduct))
                           }}
                           flexGrow={'4'}
                           loadingText="Submitting"
