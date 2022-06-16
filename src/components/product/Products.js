@@ -7,7 +7,7 @@ const Products = () => {
   const products = useSelector((state) => state.product.products);
   return (
     <Box w="100%" color="gray.600">
-      <Flex justifyContent={"center"} flexDirection={"row"}>
+      <Flex justifyContent={"center"} flexDirection={"row"} mb={"10px"}>
         <Heading>Showing All Products...</Heading>
         {/* <Filters /> */}
       </Flex>

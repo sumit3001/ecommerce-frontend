@@ -12,7 +12,7 @@ const CartPreview = () => {
   }, [total]);
 
   return (
-    <div class="cart-preview">
+    <div className="cart-preview">
       <Link to="/cart">
         <IoCartOutline style={{ marginRight: "20px" }} size={30} />
       </Link>

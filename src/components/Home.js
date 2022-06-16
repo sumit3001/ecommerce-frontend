@@ -3,10 +3,12 @@ import {
   Flex,
   Heading,
   Image,
+  Link,
   Stack,
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import { Link as lee } from "react-router-dom";
 
 export default function SplitScreen() {
   return (
@@ -24,42 +26,42 @@ export default function SplitScreen() {
                 position: "absolute",
                 bottom: 1,
                 left: 0,
-                bg: "blue.400",
+                bg: "red.400",
                 zIndex: -1,
               }}
             >
-              Freelance
+              Covers-Cart
             </Text>
             <br />{" "}
-            <Text color={"blue.400"} as={"span"}>
-              Design Projects
+            <Text color={"red.400"} as={"span"}>
+              Cover's 4 SmartPhone
             </Text>{" "}
           </Heading>
           <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
-            The project board is an exclusive resource for contract work. It's
-            perfect for freelancers, agencies, and moonlighters.
+            Purchase the Cover for your SmartPhone you Love the most!!
           </Text>
           <Stack direction={{ base: "column", md: "row" }} spacing={4}>
-            <Button
-              rounded={"full"}
-              bg={"blue.400"}
-              color={"white"}
-              _hover={{
-                bg: "blue.500",
-              }}
-            >
-              Create Project
-            </Button>
-            <Button rounded={"full"}>How It Works</Button>
+            <Link to={"/shop"} as={lee}>
+              <Button
+                rounded={"full"}
+                bg={"red.500"}
+                color={"white"}
+                _hover={{
+                  bg: "red.400",
+                }}
+              >
+                Shop Now
+              </Button>{" "}
+            </Link>
           </Stack>
         </Stack>
       </Flex>
       <Flex flex={1}>
         <Image
-          alt={"Login Image"}
+          alt={"Cover Image"}
           objectFit={"cover"}
           src={
-            "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            "https://images.unsplash.com/photo-1535157412991-2ef801c1748b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bW9iaWxlJTIwY292ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
           }
         />
       </Flex>

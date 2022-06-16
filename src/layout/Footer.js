@@ -79,7 +79,7 @@ export default function Footer() {
             <Box>
               <Logo color={useColorModeValue("gray.700", "white")} />
             </Box>
-            <Text fontSize={"sm"}>© 2021 Plus+. All rights reserved</Text>
+            <Text fontSize={"sm"}>© 2022 Covers-Cart. All rights reserved</Text>
             <Stack direction={"row"} spacing={6}>
               <SocialButton label={"Twitter"} href={"#"}>
                 <FaTwitter />

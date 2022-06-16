@@ -44,7 +44,6 @@ export const getProduct = () => async (dispatch) => {
   try {
     const res = await axios.get("http://localhost:8080/product/all");
     const { data, message, success } = res.data;
-    console.log(data)
     if (success) {
       dispatch({
         type: "FETCH_PRODUCTS_SUCCESS",

@@ -8,8 +8,7 @@ import {
   useColorModeValue as mode,
 } from "@chakra-ui/react";
 import * as React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect,useState } from "react";
 import { useSelector } from "react-redux";
 import { CartItem } from "./CartItem.js";
 import { CartOrderSummary } from "./CartOrderSummary";

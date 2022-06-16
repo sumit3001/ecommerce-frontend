@@ -91,9 +91,10 @@ const AddProduct = () => {
           onChange={(e) => setCompatibleWith(e.target.value)}
           placeholder="Select compatible with"
         >
-          <option id={"iphone"}>iphone</option>
-          <option id={"iPad"}>iPad</option>
-          <option id={"iMac"}>iMac</option>
+          <option id={"Iphone"}>Iphone</option>
+          <option id={"Samsung"}>Samsung</option>
+          <option id={"Vivo"}>Vivo</option>
+          <option id={"Realme"}>Realme</option>
         </Select>
       </FormControl>
       <Button onClick={handelAdd} marginTop={4} colorScheme="blue">

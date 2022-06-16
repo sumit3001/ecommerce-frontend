@@ -36,7 +36,7 @@ const ProductCard = ({ product }) => {
                   pos: 'absolute',
                   top: 5,
                   left: 0,
-                  backgroundImage: `url(${image})`,
+                //   backgroundImage: `url(${image})`,
                   filter: 'blur(15px)',
                   zIndex: -1,
               }}
@@ -48,8 +48,9 @@ const ProductCard = ({ product }) => {
               <Image
                   rounded={'lg'}
                   height={230}
+                  boxSize={"270px"}
                   width={282}
-                  objectFit={'cover'}
+                  objectFit={'fit'}
                   src={image}
               />
           </Box>

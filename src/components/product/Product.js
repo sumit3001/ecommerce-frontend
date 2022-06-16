@@ -20,13 +20,14 @@ import {
 } from 'react-icons/io5';
 import { toast } from 'react-hot-toast'
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import Values from '../Values';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/actions/cart';
 
 
 const Feature = ({ text, icon, iconBg }) => {
+   
   return (
       <Stack direction={'row'} align={'center'}>
           <Flex
@@ -52,6 +53,8 @@ export default function Product() {
       const product = products.find(product => product._id == productId)
       setSelectedproduct(product)
   }
+  const {token} = useSelector((state)=> state.auth)
+  const navigate = useNavigate()
   useEffect(() => {
       fetchProduct(id)
   }, [products])
@@ -117,7 +120,10 @@ export default function Product() {
                   <Flex justifyContent={'space-between'} spacing={10} pt={2}>
                       <Button
                           onClick={() => {
-                              dispatch(addToCart(selectedProduct))
+                            token
+                            ? dispatch(addToCart(selectedProduct))
+                            : navigate("/login");
+                            toast.error("Login to Add items to Cart")
                           }}
                           flexGrow={'4'}
                           loadingText="Submitting"
