@@ -33,7 +33,9 @@ const Signup = () => {
   const auth = useSelector(state=>state.auth);
   const navigate = useNavigate();
 
-  if(auth.user) navigate('/');
+  // if(auth.user){
+  //   navigate('/');
+  // }
 
   return (
     <Flex

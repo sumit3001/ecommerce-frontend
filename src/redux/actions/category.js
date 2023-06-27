@@ -4,7 +4,7 @@ import axios from "axios";
 export const addCategory = (name, description) => async (dispatch) => {
   try {
     const token = localStorage.getItem('token')
-    const res = await axios.post("https://stark-gorge-91969.herokuapp.com/category/add", {
+    const res = await axios.post("https://ecommerce-backend-xdgl.onrender.com/category/add", {
       name,
       description,
     },
@@ -40,7 +40,7 @@ export const addCategory = (name, description) => async (dispatch) => {
 
 export const getCategories = () => async (dispatch) => {
   try {
-    const res = await axios.get("https://stark-gorge-91969.herokuapp.com/category/all");
+    const res = await axios.get("https://ecommerce-backend-xdgl.onrender.com/category/all");
     const { data, message, success } = res.data;
 
     if (success) {
