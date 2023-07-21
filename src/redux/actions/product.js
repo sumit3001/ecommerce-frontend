@@ -49,7 +49,7 @@ export const getProduct = () => async (dispatch) => {
         type: "FETCH_PRODUCTS_SUCCESS",
         payload: data,
       });
-      toast.success(message);
+      // toast.success(message);
     } else {
       dispatch({
         type: "FETCH_PRODUCTS_FAILED",

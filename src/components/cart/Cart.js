@@ -12,6 +12,7 @@ import { useEffect,useState } from "react";
 import { useSelector } from "react-redux";
 import { CartItem } from "./CartItem.js";
 import { CartOrderSummary } from "./CartOrderSummary";
+import { useNavigate } from "react-router";
 // import { cartData } from './data'
 
 const Cart = () => {
@@ -19,8 +20,13 @@ const Cart = () => {
   const [cartData, setcartData] = useState([]);
   // const [total, setTotal] = useState(0)
   const [totalPrice, settotalPrice] = useState(0);
+  const {token} = useSelector((state)=> state.auth)
+  const navigate = useNavigate()
 
   useEffect(() => {
+    if(!token){
+      navigate('/login')
+    }
     setcartData(cartItems);
     let price = 0;
     cartItems.forEach((i) => {

@@ -120,10 +120,12 @@ export default function Product() {
                   <Flex justifyContent={'space-between'} spacing={10} pt={2}>
                       <Button
                           onClick={() => {
-                            token
-                            ? dispatch(addToCart(selectedProduct))
-                            : navigate("/login");
-                            toast.error("Login to Add items to Cart")
+                            if(token){
+                                dispatch(addToCart(selectedProduct))
+                            }else {
+                                navigate("/login");
+                                toast.error("Login to Add items to Cart")
+                            }
                           }}
                           flexGrow={'4'}
                           loadingText="Submitting"
