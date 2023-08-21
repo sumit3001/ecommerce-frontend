@@ -28,7 +28,7 @@ const AddProduct = () => {
   const dispatch = useDispatch();
 
   const getCategories = async () => {
-    const res = await axios.get("http://localhost:8080/category/all");
+    const res = await axios.get("https://ecommerce-backend-xdgl.onrender.com/category/all");
     const { categories } = res.data.data;
     setCategories(categories);
   };
