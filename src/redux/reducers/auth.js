@@ -3,9 +3,9 @@ const initialState = {
   user: {
     email: null,
     id: null,
-    role: 0
+    role: 0,
   },
-  isLoaded: false
+  isLoaded: false,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -13,7 +13,7 @@ const authReducer = (state = initialState, action) => {
 
   switch (type) {
     case "LOGIN_SUCCESS":
-      return { ...state,...payload, isLoaded: true };
+      return { ...state, ...payload, isLoaded: true };
     case "LOGIN_FAILED":
       return { ...state, isLoaded: true };
     case "LOAD_USER":

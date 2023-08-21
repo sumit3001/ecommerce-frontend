@@ -3,10 +3,13 @@ import toast from "react-hot-toast";
 
 export const LoginUser = (email, password) => async (dispatch) => {
   try {
-    const res = await axios.post("https://ecommerce-backend-xdgl.onrender.com/user/signin", {
-      email,
-      password,
-    });
+    const res = await axios.post(
+      "https://ecommerce-backend-xdgl.onrender.com/user/signin",
+      {
+        email,
+        password,
+      }
+    );
     const { data, success, message } = res.data;
 
     if (success) {
@@ -54,12 +57,15 @@ export const LoadUser = () => async (dispatch) => {
 export const SignupUser =
   (firstName, lastName, email, password) => async (dispatch) => {
     try {
-      const res = await axios.post("https://ecommerce-backend-xdgl.onrender.com/user/signup", {
-        firstName,
-        lastName,
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://ecommerce-backend-xdgl.onrender.com/user/signup",
+        {
+          firstName,
+          lastName,
+          email,
+          password,
+        }
+      );
       const { data, success, message } = res.data;
       if (success) {
         dispatch({

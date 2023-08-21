@@ -30,8 +30,10 @@ div.loader-container {
   width: 2em;
   height: 2em;
   background: #ffbf00;
-  -webkit-animation: show 0.88s step-end infinite alternate, pulse 0.88s linear infinite alternate;
-  animation: show 0.88s step-end infinite alternate, pulse 0.88s linear infinite alternate;
+  -webkit-animation: show 0.88s step-end infinite alternate,
+    pulse 0.88s linear infinite alternate;
+  animation: show 0.88s step-end infinite alternate,
+    pulse 0.88s linear infinite alternate;
 }
 
 .loader-block:nth-child(1) {
@@ -116,41 +118,41 @@ div.loader-container {
 @-webkit-keyframes pulse {
   from,
   40% {
-      background: #ffbf00;
+    background: #ffbf00;
   }
   to {
-      background: crimson;
+    background: crimson;
   }
 }
 
 @-webkit-keyframes show {
   from,
   40% {
-      opacity: 0;
+    opacity: 0;
   }
   41%,
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
 @keyframes pulse {
   from,
   40% {
-      background: #ffbf00;
+    background: #ffbf00;
   }
   to {
-      background: crimson;
+    background: crimson;
   }
 }
 
 @keyframes show {
   from,
   40% {
-      opacity: 0;
+    opacity: 0;
   }
   41%,
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }

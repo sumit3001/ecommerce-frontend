@@ -7,7 +7,7 @@ const categoryReducer = (state = initialState, action) => {
 
   switch (type) {
     case "FETCH_CATEGORIES_SUCCESS":
-      return {...payload}
+      return { ...payload };
     case "FETCH_CATEGORIES_FAILED":
       return state;
     case "ADD_CATEGORY_SUCCESS":
