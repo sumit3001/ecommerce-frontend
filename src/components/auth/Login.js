@@ -24,10 +24,10 @@ const Login = () => {
   const dispatch = useDispatch();
   const login = () => dispatch(LoginUser(email, password));
 
-  const auth = useSelector(state=>state.auth);
+  const auth = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
-  if(auth.token) navigate('/');
+  if (auth.token) navigate("/");
 
   return (
     <Flex

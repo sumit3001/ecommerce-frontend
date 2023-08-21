@@ -42,7 +42,9 @@ export const addProduct = (product) => async (dispatch) => {
 
 export const getProduct = () => async (dispatch) => {
   try {
-    const res = await axios.get("https://ecommerce-backend-xdgl.onrender.com/product/all");
+    const res = await axios.get(
+      "https://ecommerce-backend-xdgl.onrender.com/product/all"
+    );
     const { data, message, success } = res.data;
     if (success) {
       dispatch({

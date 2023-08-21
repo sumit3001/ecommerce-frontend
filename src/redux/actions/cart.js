@@ -20,7 +20,7 @@ export const addToCart = (item) => async (dispatch) => {
 
 export const modifyQuantity = (item, quantity) => async (dispatch) => {
   const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-  
+
   const newArr = cartItems.map((i) => {
     if (i._id === item._id) {
       return {

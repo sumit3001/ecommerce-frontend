@@ -8,7 +8,7 @@ import {
   useColorModeValue as mode,
 } from "@chakra-ui/react";
 import * as React from "react";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { CartItem } from "./CartItem.js";
 import { CartOrderSummary } from "./CartOrderSummary";
@@ -20,12 +20,12 @@ const Cart = () => {
   const [cartData, setcartData] = useState([]);
   // const [total, setTotal] = useState(0)
   const [totalPrice, settotalPrice] = useState(0);
-  const {token} = useSelector((state)=> state.auth)
-  const navigate = useNavigate()
+  const { token } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    if(!token){
-      navigate('/login')
+    if (!token) {
+      navigate("/login");
     }
     setcartData(cartItems);
     let price = 0;

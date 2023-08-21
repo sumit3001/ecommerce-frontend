@@ -28,9 +28,10 @@ const Signup = () => {
   const [email, setEmail] = useState();
 
   const dispatch = useDispatch();
-  const signup = () => dispatch(SignupUser(firstName, lastName, email, password));
+  const signup = () =>
+    dispatch(SignupUser(firstName, lastName, email, password));
 
-  const auth = useSelector(state=>state.auth);
+  const auth = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
   // if(auth.user){
@@ -64,24 +65,33 @@ const Signup = () => {
               <Box>
                 <FormControl id="firstName" isRequired>
                   <FormLabel>First Name</FormLabel>
-                  <Input onChange={e=>setFirstName(e.target.value)} type="text" />
+                  <Input
+                    onChange={(e) => setFirstName(e.target.value)}
+                    type="text"
+                  />
                 </FormControl>
               </Box>
               <Box>
                 <FormControl id="lastName">
                   <FormLabel>Last Name</FormLabel>
-                  <Input onChange={e=>setLastName(e.target.value)} type="text" />
+                  <Input
+                    onChange={(e) => setLastName(e.target.value)}
+                    type="text"
+                  />
                 </FormControl>
               </Box>
             </HStack>
             <FormControl id="email" isRequired>
               <FormLabel>Email address</FormLabel>
-              <Input onChange={e=>setEmail(e.target.value)} type="email" />
+              <Input onChange={(e) => setEmail(e.target.value)} type="email" />
             </FormControl>
             <FormControl id="password" isRequired>
               <FormLabel>Password</FormLabel>
               <InputGroup>
-                <Input onChange={e=>setPassword(e.target.value)} type={showPassword ? "text" : "password"} />
+                <Input
+                  onChange={(e) => setPassword(e.target.value)}
+                  type={showPassword ? "text" : "password"}
+                />
                 <InputRightElement h={"full"}>
                   <Button
                     variant={"ghost"}
@@ -110,7 +120,10 @@ const Signup = () => {
             </Stack>
             <Stack pt={6}>
               <Text align={"center"}>
-                Already a user? <Link onClick={()=>navigate('/login')} color={"blue.400"}>Login</Link>
+                Already a user?{" "}
+                <Link onClick={() => navigate("/login")} color={"blue.400"}>
+                  Login
+                </Link>
               </Text>
             </Stack>
           </Stack>
@@ -118,6 +131,6 @@ const Signup = () => {
       </Stack>
     </Flex>
   );
-}
+};
 
 export default Signup;

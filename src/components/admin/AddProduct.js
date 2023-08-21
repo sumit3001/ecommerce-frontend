@@ -48,8 +48,8 @@ const AddProduct = () => {
         image,
         stock,
         color,
-        compatibleWith}
-      )
+        compatibleWith,
+      })
     );
 
   return (

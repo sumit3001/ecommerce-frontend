@@ -3,16 +3,19 @@ import axios from "axios";
 
 export const addCategory = (name, description) => async (dispatch) => {
   try {
-    const token = localStorage.getItem('token')
-    const res = await axios.post("https://ecommerce-backend-xdgl.onrender.com/category/add", {
-      name,
-      description,
-    },
-    {
-      headers: {
-        'authorization': `bearer ${token}`
+    const token = localStorage.getItem("token");
+    const res = await axios.post(
+      "https://ecommerce-backend-xdgl.onrender.com/category/add",
+      {
+        name,
+        description,
+      },
+      {
+        headers: {
+          authorization: `bearer ${token}`,
+        },
       }
-    });
+    );
     const { data, message, success } = res.data;
 
     if (success) {
@@ -40,7 +43,9 @@ export const addCategory = (name, description) => async (dispatch) => {
 
 export const getCategories = () => async (dispatch) => {
   try {
-    const res = await axios.get("https://ecommerce-backend-xdgl.onrender.com/category/all");
+    const res = await axios.get(
+      "https://ecommerce-backend-xdgl.onrender.com/category/all"
+    );
     const { data, message, success } = res.data;
 
     if (success) {

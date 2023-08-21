@@ -17,12 +17,12 @@ import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Link as lee } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/actions/auth";
-import CartPreview from '../components/cart/CartPreview';
+import CartPreview from "../components/cart/CartPreview";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
   const dispatch = useDispatch();
-  const { token } = useSelector((state)=>state.auth);
+  const { token } = useSelector((state) => state.auth);
 
   return (
     <Box>
@@ -61,13 +61,13 @@ export default function Navbar() {
             />
           </Link>
 
-          <Flex align={'center'} display={{ base: "none", md: "flex" }} ml={10}>
+          <Flex align={"center"} display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
         </Flex>
         {token ? (
           <>
-            <CartPreview/>
+            <CartPreview />
             <Button
               onClick={() => dispatch(logout())}
               as={lee}

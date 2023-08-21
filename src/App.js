@@ -33,7 +33,7 @@ const App = () => {
       }}>
         Logout
       </button> */}
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -41,9 +41,16 @@ const App = () => {
         <Route path="/shop/:id" element={<Product />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/admin" element={<AdminWrapper><Admin/></AdminWrapper>} />
+        <Route
+          path="/admin"
+          element={
+            <AdminWrapper>
+              <Admin />
+            </AdminWrapper>
+          }
+        />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

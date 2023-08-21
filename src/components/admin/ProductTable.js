@@ -17,14 +17,13 @@ import { useSelector } from "react-redux";
 import { getProduct } from "../../redux/actions/product";
 
 const ProductTable = () => {
-
   const dispatch = useDispatch();
   const products = useSelector((state) => state.product.products);
 
   useEffect(() => {
     dispatch(getProduct());
   }, []);
-  
+
   return (
     <TableContainer>
       <Table variant="striped" colorScheme="purple">

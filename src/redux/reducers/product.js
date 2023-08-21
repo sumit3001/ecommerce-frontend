@@ -7,7 +7,7 @@ const productReducer = (state = initialState, action) => {
 
   switch (type) {
     case "FETCH_PRODUCTS_SUCCESS":
-      return {...payload}
+      return { ...payload };
     case "FETCH_PRODUCTS_FAILED":
       return state;
     case "ADD_PRODUCT_SUCCESS":
