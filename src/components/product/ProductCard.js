@@ -25,7 +25,7 @@ const ProductCard = ({ product }) => {
           zIndex={1}>
           <Box
               rounded={'lg'}
-              mt={-12}
+              marginLeft={4}
               pos={'relative'}
               height={'230px'}
               _after={{
@@ -59,7 +59,10 @@ const ProductCard = ({ product }) => {
                   +plus
               </Text>
               <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
-                  {`${name}, ${color}`}
+                  {name}
+              </Heading>
+              <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
+                  {color}
               </Heading>
               <Stack direction={'row'} align={'center'}>
                   <Text color={'gray.700'} fontWeight={800} fontSize={'xl'}>
